@@ -17,11 +17,17 @@ Work top to bottom. After plugin/bar edits: `omarchy restart shell`.
 - [ ] If user has **Moto Buds / Buds+** → copy `Model.js` patch + `moto-bridge` from source **after** plugin add
 - [ ] Confirm `omarchy plugin update` will not run on Omaphones without stashing local files
 
-## 3. Local panels (rsync from source)
-- [ ] `wispr-flow-panel` → enable `wispr-flow.panel` on bar right
-- [ ] `voxtral.panel` → enable on bar right (can sit beside Wispr)
-- [ ] `muse-agent` + `muse-usage.cjs` if Muse usage widget wanted
+## 3. Local panels (from this repo — not “ask the other machine”)
+- [ ] Follow [local-plugins/README.md](./local-plugins/README.md)
+- [ ] rsync `local-plugins/wispr-flow-panel` → `~/.config/omarchy/plugins/wispr-flow-panel/`
+- [ ] rsync `local-plugins/voxtral.panel` → `~/.config/omarchy/plugins/voxtral.panel/`
+- [ ] rsync `local-plugins/muse-agent` → `~/.config/omarchy/plugins/muse-agent/`
+- [ ] `install -m 755 scripts/muse-usage.cjs ~/.local/bin/muse-usage.cjs`
+- [ ] `omarchy plugin enable` each of `wispr-flow.panel`, `voxtral.panel`, `muse-agent`
+- [ ] Merge bar placement from `shell-bar-excerpt.json` if needed
 - [ ] Remove stale `superwhisper.panel` bar entry if present
+- [ ] Omaphones Moto: [patches/omaphones-moto/README.md](./patches/omaphones-moto/README.md)
+- [ ] Voxtral non-secret config: copy `dictation-voxtral/*` then add `api_key` yourself
 
 ## 4. Dictation — pick ONE PTT owner
 ### If Wispr (matches source daily driver)

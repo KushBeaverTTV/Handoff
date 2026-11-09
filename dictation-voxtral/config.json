@@ -1,0 +1,13 @@
+{
+  "stt_model": "voxtral-mini-transcribe-3",
+  "language": "en",
+  "polish": true,
+  "polish_model": "mistral-small-latest",
+  "style": "natural",
+  "styles": {
+    "natural": "Keep the speaker's natural voice. Light cleanup only.",
+    "chat": "Casual messaging \u2014 contractions OK, short and punchy.",
+    "email": "Readable email \u2014 clear sentences, still sound like the speaker.",
+    "code": "Dev dictation \u2014 preserve identifiers, commands, paths, and casing exactly."
+  }
+}

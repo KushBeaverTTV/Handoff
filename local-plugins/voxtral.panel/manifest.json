@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "voxtral.panel",
+  "name": "Voxtral",
+  "version": "1.0.0",
+  "author": "user",
+  "license": "MIT",
+  "description": "Mistral Voxtral dictation: live status in the Omarchy bar (idle / listening / transcribing), with push-to-talk actions.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Voxtral",
+    "description": "Live Voxtral dictation status with quick start/stop and last transcript.",
+    "category": "Status",
+    "aliases": ["voxtral", "mistral-dictation", "voxtral-stt"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {}
+  }
+}

@@ -1,0 +1,8 @@
+-- >>> wispr-flow (managed) >>>
+-- Wispr Flow (unofficial Linux port): no window rules. The Hub is a normal app
+-- window and follows the workspace mode like every other app; the app's own
+-- window centering was patched out of its bundle (it mixed logical and
+-- physical pixels at 2x scale and landed off-screen), so Hyprland centers
+-- floating windows normally. The Flow Bar pill is removed — the wispr-flow
+-- bar widget is the status indicator.
+-- <<< wispr-flow (managed) <<<

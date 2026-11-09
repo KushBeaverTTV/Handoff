@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "muse-agent",
+  "name": "Muse",
+  "version": "1.0.0",
+  "author": "user",
+  "license": "MIT",
+  "description": "Muse, Meta's personal AI agent: open or focus it from the bar, with live running status.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Muse",
+    "description": "Open or focus Muse, Meta's personal AI agent, and see at a glance whether it is running.",
+    "category": "AI",
+    "aliases": ["muse", "muse-agent"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {}
+  }
+}

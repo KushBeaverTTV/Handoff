@@ -13,7 +13,21 @@
 
 1. **[PLUGINS.md](./PLUGINS.md)** — marketplace links, install commands, bar layout, per-plugin customizations  
 2. **[DICTATION.md](./DICTATION.md)** — Wispr vs Voxtral vs Voxtype, PTT ownership, both bar panels explained  
-3. **[CHECKLIST.md](./CHECKLIST.md)** — install order + smoke tests on the other box  
+3. **[local-plugins/README.md](./local-plugins/README.md)** — **actual panel source** (Wispr / Voxtral / Muse) + install  
+4. **[CHECKLIST.md](./CHECKLIST.md)** — install order + smoke tests on the other box  
+
+## What’s in the tree
+
+| Path | Contents |
+|---|---|
+| `local-plugins/wispr-flow-panel/` | Full Wispr bar plugin (`Panel.qml`, `wispr-status.sh`, manifest) |
+| `local-plugins/voxtral.panel/` | Full Voxtral bar plugin + brand assets |
+| `local-plugins/muse-agent/` | Full Muse (muse.ai) usage bar plugin |
+| `scripts/muse-usage.cjs` | CDP scraper the Muse panel calls |
+| `dictation-voxtral/` | Voxtral config, polish prompt, vocabulary (**no api_key**) |
+| `hypr/bindings.lua` | Live bindings from source (Postcard, Fathom, Island, Voxtral disabled block) |
+| `patches/omaphones-moto/` | Moto Buds+ `Model.js` + `moto-bridge` + diff |
+| `shell.json` / `shell-bar-excerpt.json` | Live shell/bar settings from source |
 
 ## Hard rules (do not skip)
 
@@ -23,19 +37,13 @@
 - **`omarchy plugin update` wipes local plugin patches.** Omaphones has a Moto Buds+ patch — stash before updating.
 - **Muse (bar) ≠ Muse Code (CLI).** Bar scrapes muse.ai over CDP.
 
-## What is *not* in this repo
+## What is *still* not in this repo (secrets / binary patches)
 
-Copy these from the source machine if needed (they are local-only / may contain secrets):
-
-| Path | Why |
+| Path | Why omitted |
 |---|---|
-| `~/.config/omarchy/plugins/wispr-flow-panel/` | Custom panel (no public git) |
-| `~/.config/omarchy/plugins/voxtral.panel/` | Custom panel + brand asset |
-| `~/.config/omarchy/plugins/muse-agent/` | Custom Muse usage widget |
-| `~/.local/bin/muse-usage.cjs` | CDP scraper for muse.ai |
-| `~/.config/omarchy/plugins/io.github.ncr.omaphones/Model.js` + `moto-bridge` | Moto patch (diff also documented) |
-| `~/.config/omarchy/dictation-voxtral/api_key` | Mistral key |
+| `dictation-voxtral/api_key` | Mistral key — create on the target |
 | `~/.config/omarchy-time-machine/local-home.key` | restic password |
-| Wispr `app.asar` patches under `~/.local/opt/wispr-flow/` | Binary bundle patches |
+| Wispr `app.asar` under `~/.local/opt/wispr-flow/` | Binary bundle patches (pill / centering / close-to-background) — too large / binary; re-apply from notes in DICTATION.md or rsync app tree separately |
+| Browser cookies / CDP profile | muse.ai login session |
 
-Optional: rsync those directories after cloning this handoff.
+Local **panel source is in the repo** under `local-plugins/`.

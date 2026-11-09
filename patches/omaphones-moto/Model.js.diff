@@ -1,0 +1,27 @@
+diff --git i/Model.js w/Model.js
+index 47e0973..1d66593 100644
+--- i/Model.js
++++ w/Model.js
+@@ -459,6 +459,7 @@ var BOSE_BMAP_UUID = "00000000-deca-fade-deca-deafdecacaff"
+ var BOSE_SPP_UUID = "9b26d8c0-a8ed-440b-95b0-c4714a518bcc"
+ var REDMI_FD2D_UUID = "0000fd2d-0000-1000-8000-00805f9b34fb"
+ var AIROHA_RACE_UUID = "00000000-0000-0000-0099-aabbccddeeff"
++var MOTO_CONTROL_UUID = "fc9d9fe0-4899-11ee-be56-0242ac120002"
+ 
+ // The UUIDs `bluetoothctl info <address>` printed, lowercased.
+ // Quickshell.Bluetooth exposes no uuids property, so the SDP record is read the
+@@ -591,6 +592,14 @@ var BACKENDS = [
+     ambient: { min: 1, max: 7, voice: "", command: "", key: "" },
+     // A numeric ANC strength slider, 1-7, drawn while in ANC.
+     strength: { min: 1, max: 7 } },
++  { name: "moto", bridge: "moto-bridge",
++    // Moto Buds / Buds+ control channel (HEAD…TAIL PDUs). Confirmed on
++    // "moto buds+" (Moto Buds+): battery L/R and Off/ANC/Ambient via 0x0200/0x0201.
++    // Claimed by reported name + control UUID so Fast Pair alone cannot hand
++    // these to the JBL BLE row below.
++    modelNames: ["moto buds+"],
++    modelUuids: [MOTO_CONTROL_UUID],
++    args: ["address", "name"] },
+   { name: "jbl", bridge: "jbl-bridge",
+     ble: true, args: ["bleAddress", "modelId"] }
+ ]

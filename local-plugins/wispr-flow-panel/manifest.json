@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "wispr-flow.panel",
+  "name": "Wispr Flow",
+  "version": "1.0.0",
+  "author": "user",
+  "license": "MIT",
+  "description": "Wispr Flow voice dictation: live status in the Omarchy bar, with hands-free dictation, the Hub and the Flow Bar one click away.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Wispr Flow",
+    "description": "Live dictation status (idle, recording, off) with quick actions: dictate, open the Hub, start or quit the app, toggle the Flow Bar.",
+    "category": "Status",
+    "aliases": ["wispr", "wispr-flow", "whisperflow"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {}
+  }
+}
