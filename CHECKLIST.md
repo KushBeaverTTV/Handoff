@@ -2,6 +2,19 @@
 
 Work top to bottom. After plugin/bar edits: `omarchy restart shell`.
 
+## 0. Wispr Flow app (daily dictation) — DO THIS, not “enable a panel”
+- [ ] Read **[WISPR-FLOW.md](./WISPR-FLOW.md)** end to end
+- [ ] `bash wispr-flow/install.sh` (downloads aarch64/x86_64 AppImage from wispr-flow-linux releases)
+- [ ] `wispr-flow --install-udev-rules` then `wispr-flow --doctor` (uinput + input PASS)
+- [ ] `systemctl --user enable --now wispr-flow wispr-flow-sounds`
+- [ ] Sign in: `xdg-open wispr-flow://open`
+- [ ] Set PTT **Right Option = VK 165** in `~/.config/Wispr Flow/config.json` (see §5)
+- [ ] `hideFlowBarPermanently: true`; prefer `personalizationStyles.other: casual`
+- [ ] Ensure **no** Voxtral/Omarchy bind on Alt_R (DICTATION.md / hypr/bindings.lua `if false then`)
+- [ ] Optional: copy patched `app.asar` from source for pill/centering/close-to-background (§6)
+- [ ] Bar panel: `local-plugins/wispr-flow-panel` (install.sh does this if Omarchy present)
+- [ ] Smoke: hold Right Option → text types; panel shows recording; close Hub → process stays up
+
 ## 1. Community plugins
 - [ ] Install the eight git plugins from [PLUGINS.md](./PLUGINS.md)
 - [ ] Enable Dynamic Island before relying on notifications

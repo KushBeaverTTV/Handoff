@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# wispr-flow-sound-daemon — dictation start/end cues for Wispr Flow.
+#
+# The app ships its own dictation-start/stop sounds but they never fire on
+# this port, so this daemon watches the app's status transitions in its
+# launcher log and plays the app's own sounds through PipeWire directly:
+#   listening  -> dictation-start.wav   (the cue that the mic is live)
+#   dismissed  -> dictation-stop.wav    (the cue that the dictation landed)
+#   idle       -> dictation-stop.wav    (only if a dictation was running)
+#
+# Mid-flight states (starting/stopping/processing) get no cue, and a second
+# "listening" without an end does not re-trigger the start sound.
+set -u
+
+LOG="${HOME}/.cache/wispr-flow/launcher.log"
+SOUNDS="${HOME}/.local/share/sounds/wispr-flow"
+START="${SOUNDS}/dictation-start.wav"
+STOP="${SOUNDS}/dictation-stop.wav"
+
+export XDG_RUNTIME_DIR="${XDG_RUNTIME_DIR:-/run/user/$(id -u)}"
+command -v paplay >/dev/null 2>&1 || exit 0
+[ -f "$START" ] && [ -f "$STOP" ] || exit 0
+
+state="off"
+
+play() {
+  paplay "$1" >/dev/null 2>&1 &
+}
+
+# -n 0: only new lines matter; -F follows across truncation and app restarts.
+tail -F -n 0 "$LOG" 2>/dev/null | while read -r line; do
+  case "$line" in
+    *"updateDictationStatus: listening"*)
+      if [ "$state" != "recording" ]; then
+        play "$START"
+        state="recording"
+      fi
+      ;;
+    *"updateDictationStatus: dismissed"*|*"updateDictationStatus: idle"*)
+      if [ "$state" = "recording" ] || [ "$state" = "processing" ]; then
+        play "$STOP"
+        state="idle"
+      fi
+      ;;
+  esac
+done

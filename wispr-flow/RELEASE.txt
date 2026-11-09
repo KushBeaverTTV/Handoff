@@ -1,0 +1,12 @@
+Unofficial Linux port (NOT AUR — AUR is x86_64 only):
+  https://github.com/wispr-flow-linux/wispr-flow-linux
+
+Pinned on source machine (2026-11):
+  tag:    v1.0.5+wispr1.6.1337
+  app:    Wispr 1.6.1337 / port 1.0.5
+  aarch64 AppImage:
+    https://github.com/wispr-flow-linux/wispr-flow-linux/releases/download/v1.0.5%2Bwispr1.6.1337/wispr-flow-1.6.1337-1.0.5-aarch64.AppImage
+  x86_64 AppImage:
+    https://github.com/wispr-flow-linux/wispr-flow-linux/releases/download/v1.0.5%2Bwispr1.6.1337/wispr-flow-1.6.1337-1.0.5-x86_64.AppImage
+
+Also: .deb / .rpm for amd64 and arm64 on the same release page.

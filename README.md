@@ -11,16 +11,21 @@
 
 ## Read order
 
-1. **[PLUGINS.md](./PLUGINS.md)** — marketplace links, install commands, bar layout, per-plugin customizations  
-2. **[DICTATION.md](./DICTATION.md)** — Wispr vs Voxtral vs Voxtype, PTT ownership, both bar panels explained  
-3. **[local-plugins/README.md](./local-plugins/README.md)** — **actual panel source** (Wispr / Voxtral / Muse) + install  
-4. **[CHECKLIST.md](./CHECKLIST.md)** — install order + smoke tests on the other box  
+1. **[WISPR-FLOW.md](./WISPR-FLOW.md)** — **full Wispr Flow app install** (download, udev, systemd, PTT, patches, sounds, smoke). Not optional if they want dictation.  
+2. **[PLUGINS.md](./PLUGINS.md)** — marketplace links, install commands, bar layout, per-plugin customizations  
+3. **[DICTATION.md](./DICTATION.md)** — Wispr vs Voxtral vs Voxtype, PTT ownership, panel behavior  
+4. **[local-plugins/README.md](./local-plugins/README.md)** — bar panel *source* (Wispr / Voxtral / Muse)  
+5. **[CHECKLIST.md](./CHECKLIST.md)** — install order + smoke tests  
+
+**One-liner for the other agent:**  
+`bash wispr-flow/install.sh` then finish §5–§7 of `WISPR-FLOW.md` (udev, PTT 165, panel, no dual Option binds).
 
 ## What’s in the tree
 
 | Path | Contents |
 |---|---|
-| `local-plugins/wispr-flow-panel/` | Full Wispr bar plugin (`Panel.qml`, `wispr-status.sh`, manifest) |
+| **`WISPR-FLOW.md` + `wispr-flow/`** | **Complete Wispr app setup**: install.sh, systemd units, udev rule, sound daemon+WAVs, desktop file, prefs, release URLs |
+| `local-plugins/wispr-flow-panel/` | Bar status widget only (needs the app above) |
 | `local-plugins/voxtral.panel/` | Full Voxtral bar plugin + brand assets |
 | `local-plugins/muse-agent/` | Full Muse (muse.ai) usage bar plugin |
 | `scripts/muse-usage.cjs` | CDP scraper the Muse panel calls |

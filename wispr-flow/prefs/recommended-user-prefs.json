@@ -1,0 +1,21 @@
+{
+  "prefs.user.shortcuts_note": "Windows VK codes. 165=Right Option/Alt_R = PTT. Never use 91/92 (Super).",
+  "prefs.user.shortcuts": {
+    "27": "dismiss",
+    "165": "ptt",
+    "160+164+90": "paste_last_text",
+    "160+164+88": "copy_last_text"
+  },
+  "prefs.user.hideFlowBarPermanently": true,
+  "prefs.user.polishEnabled": true,
+  "prefs.user.shouldMuteAudio": false,
+  "prefs.user.shouldPauseAudio": false,
+  "prefs.user.personalizationStyles": {
+    "work": "excited",
+    "email": "formal",
+    "other": "casual",
+    "unset": "default",
+    "personal": "casual"
+  },
+  "note_other_style": "On Linux AX context is broken; almost all dictation lands as personalizationAppType 'other'. Map other\u2192casual (stock is formal which corporate-ifies everything). Source machine still had other=formal in live prefs \u2014 recommend casual on new installs."
+}
