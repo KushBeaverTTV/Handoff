@@ -28,6 +28,8 @@
 | `local-plugins/wispr-flow-panel/` | Bar status widget only (needs the app above) |
 | `local-plugins/voxtral.panel/` | Full Voxtral bar plugin + brand assets |
 | `local-plugins/muse-agent/` | Full Muse (muse.ai) usage bar plugin |
+| **`themes/cyberpunk-2077/`** | Cyberpunk 2077 theme: colors, 4K wallpapers, yellow icons, GTK hook, `install.sh` |
+| **`dictation-cornerstone/`** + `local-plugins/cornerstone.panel/` | Cornerstone dictation from the desktop PC: command, settings, bar panel, service files, `install.sh` (**no api_key**) |
 | `scripts/muse-usage.cjs` | CDP scraper the Muse panel calls |
 | `dictation-voxtral/` | Voxtral config, polish prompt, vocabulary (**no api_key**) |
 | `hypr/bindings.lua` | Live bindings from source (Postcard, Fathom, Island, Voxtral disabled block) |

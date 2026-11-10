@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "cornerstone.panel",
+  "name": "Cornerstone",
+  "version": "1.0.0",
+  "author": "user",
+  "license": "MIT",
+  "description": "Cornerstone dictation: local Whisper speech-to-text with Mistral fallback and polish. Live status in the Omarchy bar (idle / listening / transcribing), with push-to-talk actions.",
+  "kinds": ["bar-widget"],
+  "activation": "on-demand",
+  "entryPoints": {
+    "barWidget": "Panel.qml"
+  },
+  "barWidget": {
+    "displayName": "Cornerstone",
+    "description": "Live Cornerstone dictation status with quick start/stop and last transcript.",
+    "category": "Status",
+    "aliases": ["cornerstone", "cornerstone-dictation", "local-dictation"],
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {}
+  }
+}

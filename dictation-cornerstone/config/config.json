@@ -1,0 +1,18 @@
+{
+  "stt_model": "voxtral-mini-transcribe-3",
+  "language": "en",
+  "polish": true,
+  "polish_model": "mistral-small-latest",
+  "style": "natural",
+  "styles": {
+    "natural": "Keep the speaker's natural voice. Light cleanup only.",
+    "chat": "Casual messaging — contractions OK, short and punchy.",
+    "email": "Readable email — clear sentences, still sound like the speaker.",
+    "code": "Dev dictation — preserve identifiers, commands, paths, and casing exactly."
+  },
+  "stt_engine": "qwen",
+  "stt_local_url": "http://127.0.0.1:29333/transcribe",
+  "stt_gpu_url": "http://127.0.0.1:29334/inference",
+  "mic_target": "alsa_input.usb-Elgato_Systems_Elgato_Wave_3_BS30K1A00645-00.mono-fallback",
+  "sounds": true
+}

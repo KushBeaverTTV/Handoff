@@ -1,0 +1,11 @@
+/* cyberpunk-2077 omarchy theme: managed by hooks/theme-set.d/20-gtk-accent */
+@define-color theme_bg_color #0b0b0d;
+@define-color theme_fg_color #f0f0ec;
+@define-color theme_base_color #0b0b0d;
+@define-color theme_text_color #f0f0ec;
+@define-color theme_selected_bg_color #fcee0a;
+@define-color theme_selected_fg_color #0b0b0d;
+@define-color theme_unfocused_bg_color #0b0b0d;
+@define-color theme_unfocused_base_color #0b0b0d;
+@define-color theme_unfocused_selected_bg_color #fcee0a;
+@define-color theme_unfocused_selected_fg_color #0b0b0d;

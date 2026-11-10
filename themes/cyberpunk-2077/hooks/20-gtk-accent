@@ -1,0 +1,26 @@
+#!/bin/bash
+# Carry the Cyberpunk 2077 theme into GTK apps (Files, dialogs, settings):
+# black surfaces + yellow accent. Any other theme gets stock GTK back.
+# Only gtk.css files carrying our marker line are ever replaced or removed.
+THEME_DIR="$HOME/.config/omarchy/themes/cyberpunk-2077"
+MARK="cyberpunk-2077 omarchy theme"
+
+put() { # src dest
+  if [[ ! -e $2 ]] || grep -q "$MARK" "$2" 2>/dev/null; then
+    mkdir -p "${2%/*}" && cp "$1" "$2"
+  fi
+}
+drop() { [[ -f $1 ]] && grep -q "$MARK" "$1" 2>/dev/null && rm -f "$1"; return 0; }
+
+if [[ ${1:-} == "cyberpunk-2077" ]]; then
+  put "$THEME_DIR/gtk4.css" "$HOME/.config/gtk-4.0/gtk.css"
+  put "$THEME_DIR/gtk3.css" "$HOME/.config/gtk-3.0/gtk.css"
+  accent=yellow
+else
+  drop "$HOME/.config/gtk-4.0/gtk.css"
+  drop "$HOME/.config/gtk-3.0/gtk.css"
+  accent=blue
+fi
+
+[[ -n ${DBUS_SESSION_BUS_ADDRESS:-} ]] || exit 0
+gsettings set org.gnome.desktop.interface accent-color "$accent"

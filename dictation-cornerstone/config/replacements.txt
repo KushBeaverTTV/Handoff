@@ -1,0 +1,19 @@
+# Words the speech model keeps getting wrong.
+# One per line:   what it types => what it should be
+# Whole words only, any capitalisation. Keep the left side distinctive:
+# a real everyday word on the left would be changed everywhere.
+Opus 55 => Opus 5.5
+Opus 4 5 => Opus 4.5
+Sonnet 55 => Sonnet 5.5
+Clod Code => Claude Code
+Cloud Code => Claude Code
+Omarchi => Omarchy
+O'Marchy => Omarchy
+Oh Marchy => Omarchy
+Hyperland => Hyprland
+Whisperflow => Wispr Flow
+Whisper Flow => Wispr Flow
+Omachi => Omarchy
+pipe wire => PipeWire
+Pipewire => PipeWire
+Claud => Claude

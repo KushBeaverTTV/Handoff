@@ -1,0 +1,17 @@
+# Proper nouns & tech — help STT + polish keep these intact
+Omarchy, Hyprland, Hermes, Cortana, Tidewell, Voxtral, Mistral, Wispr
+Asahi, Apple Silicon, MacBook Neo, PipeWire, Wayland, btrfs, LUKS
+TypeScript, JavaScript, React, Three.js, Node, npm, gh, git, PR
+BlueZ, RFCOMM, Omaphones, Dynamic Island, Fathom, Postcard
+Claude, Qwen, Codex, OpenCode, StepFun, GLM, Grok
+
+# Gaming
+respawn, loadout, ranked, casual, lobby, queue, clutch, nerf, buff
+meta, DPS, tank, support, ult, cooldown, ping, third-party, rotate
+K/D, W/L, aim assist, FOV, skin, battle pass, raid, dungeon, boss
+
+# Everyday / voice the speaker may use — do NOT "fix" these away
+finna, gonna, wanna, gotta, iont, ion, ain't, y'all, bouta, tryna
+lowkey, highkey, deadass, fr, frfr, ngl, tbh, idk, idc, imma
+bet, say less, no cap, cap, lit, fire, mid, sus, vibe, vibes
+periodt, ong, wya, wyd, istg, smh, bruh, bro, sis, cuh
